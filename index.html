@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Remembrance House | Editable Digital Funeral Stationery</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f8f6f0;
+            color: #304238;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        header {
+            background: #f8f6f0;
+            padding: 25px 0;
+            border-bottom: 1px solid #dddcd4;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero */
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px 90px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            font-weight: normal;
+            line-height: 1.15;
+            max-width: 750px;
+            margin: 0 auto 25px;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 35px;
+            font-size: 18px;
+            color: #5d685f;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: #40594a;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: #40594a;
+            border: 1px solid #40594a;
+        }
+
+        /* Intro */
+
+        .intro {
+            text-align: center;
+            padding: 70px 20px;
+            background: #eeeae0;
+        }
+
+        .intro h2 {
+            font-size: 38px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 700px;
+            margin: auto;
+            color: #5d685f;
+        }
+
+        /* Products */
+
+        .products {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-size: 40px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: #667067;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .product {
+            background: #fff;
+            border: 1px solid #dedbd1;
+            padding-bottom: 28px;
+        }
+
+        .product-image {
+            height: 360px;
+            background: #e7e5da;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .mock-card {
+            background: #f9f7ef;
+            width: 75%;
+            height: 82%;
+            padding: 45px 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .mock-card small {
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .mock-card h3 {
+            font-size: 30px;
+            font-weight: normal;
+            margin: 30px 0 15px;
+        }
+
+        .mock-card span {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h3 {
+            font-size: 26px;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .product-content p {
+            color: #667067;
+            font-size: 15px;
+            min-height: 55px;
+        }
+
+        .price {
+            display: block;
+            margin: 18px 0;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .product-button {
+            display: inline-block;
+            border: 1px solid #40594a;
+            padding: 11px 18px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        /* How it works */
+
+        .how-it-works {
+            background: #e9e7dc;
+            padding: 90px 0;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #667067;
+        }
+
+        /* Features */
+
+        .features {
+            padding: 90px 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature h3 {
+            font-size: 21px;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #667067;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            padding: 90px 20px;
+            background: #40594a;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #e7ebe7;
+        }
+
+        .cta .button {
+            background: white;
+            color: #40594a;
+        }
+
+        /* FAQ */
+
+        .faq {
+            padding: 90px 0;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            padding: 25px 0;
+            border-bottom: 1px solid #dddcd4;
+        }
+
+        .faq-item h3 {
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #667067;
+        }
+
+        /* About */
+
+        .about {
+            background: #eeeae0;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 40px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: 0 auto 15px;
+            color: #5d685f;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #304238;
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            color: #dce1dc;
+            margin: 5px 0;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section-heading h2,
+            .about h2,
+            .cta h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">Remembrance House</div>
+
+            <div class="nav-links">
+                <a href="#home">HOME</a>
+                <a href="#shop">SHOP</a>
+                <a href="#how-it-works">HOW IT WORKS</a>
+                <a href="#faq">FAQ</a>
+                <a href="#about">ABOUT</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<section class="hero" id="home">
+    <div class="container">
+
+        <h1>Create a beautiful tribute,<br>in your own words.</h1>
+
+        <p>
+            Thoughtfully designed editable Order of Service templates
+            that you can personalise yourself with photographs, names,
+            dates, readings, hymns and memories.
+        </p>
+
+        <div class="buttons">
+            <a href="#shop" class="button">SHOP TEMPLATES</a>
+            <a href="#how-it-works" class="button secondary">HOW IT WORKS</a>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="intro">
+    <div class="container">
+
+        <h2>Instant digital product</h2>
+
+        <p>
+            No physical item is shipped. Edit it yourself, personalise
+            the wording and photos, then download and print your finished design.
+        </p>
+
+    </div>
+</section>
+
+
+<section class="products" id="shop">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Shop editable templates</h2>
+
+            <p>
+                Choose a design that feels right. Purchase once,
+                personalise the template yourself and create a meaningful
+                Order of Service at your own pace.
+            </p>
+        </div>
+
+
+        <div class="product-grid">
+
+            <!-- Eleanor -->
+
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="mock-card">
+                        <small>IN LOVING MEMORY</small>
+                        <h3>A Life<br>Remembered</h3>
+                        <span>ORDER OF SERVICE</span>
+                    </div>
+                </div>
+
+                <div class="product-content">
+
+                    <h3>The Eleanor</h3>
+
+                    <p>
+                        Soft botanical details with an elegant,
+                        traditional feel.
+                    </p>
+
+                    <span class="price">Digital template - £8.99</span>
+
+                    <a href="#" class="product-button">VIEW TEMPLATE</a>
+
+                </div>
+            </div>
+
+
+            <!-- Grace -->
+
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="mock-card">
+                        <small>IN LOVING MEMORY</small>
+                        <h3>A Life<br>Remembered</h3>
+                        <span>ORDER OF SERVICE</span>
+                    </div>
+                </div>
+
+                <div class="product-content">
+
+                    <h3>The Grace</h3>
+
+                    <p>
+                        A delicate floral design with space
+                        for a favourite photograph.
+                    </p>
+
+                    <span class="price">Digital template - £8.99</span>
+
+                    <a href="#" class="product-button">VIEW TEMPLATE</a>
+
+                </div>
+            </div>
+
+
+            <!-- Rowan -->
+
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="mock-card">
+                        <small>IN LOVING MEMORY</small>
+                        <h3>A Life<br>Remembered</h3>
+                        <span>ORDER OF SERVICE</span>
+                    </div>
+                </div>
+
+                <div class="product-content">
+
+                    <h3>The Rowan</h3>
+
+                    <p>
+                        Clean, modern and understated with
+                        gentle sage details.
+                    </p>
+
+                    <span class="price">Digital template - £8.99</span>
+
+                    <a href="#" class="product-button">VIEW TEMPLATE</a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="how-it-works" id="how-it-works">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>How it works</h2>
+
+            <p>
+                Simple, flexible and designed so you stay in control
+                of every personal detail.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Choose your template</h3>
+                <p>
+                    Browse the collection and choose the design
+                    you would like to use.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>Purchase & access</h3>
+                <p>
+                    Complete your purchase and receive access
+                    to your editable digital template.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>Make it personal</h3>
+                <p>
+                    Replace the sample text and photos with your
+                    loved one's details, readings, hymns and memories.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">04</div>
+                <h3>Download your design</h3>
+                <p>
+                    When you are happy with it, download the
+                    finished file in the format provided.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">05</div>
+                <h3>Print your way</h3>
+                <p>
+                    Print at home or send the file to a local
+                    or online professional printer.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Make it uniquely theirs</h2>
+
+            <p>
+                Your template is designed to give you a beautiful
+                starting point while leaving room for the details
+                that made your loved one special.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature">
+                <h3>Photographs</h3>
+                <p>Add meaningful favourite images.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Names & dates</h3>
+                <p>Personalise all key details.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Service details</h3>
+                <p>Add the full running order.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Readings & poems</h3>
+                <p>Include words that hold meaning.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Hymns & music</h3>
+                <p>Add songs chosen for the service.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Personal messages</h3>
+                <p>Create a final page from the heart.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>A gentle way to create something personal</h2>
+
+        <p>
+            Edit in your own time, make changes until it feels right,
+            and create a keepsake for family and friends.
+        </p>
+
+        <a href="#shop" class="button">BROWSE ALL TEMPLATES</a>
+
+    </div>
+
+</section>
+
+
+<section class="faq" id="faq">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Frequently asked questions</h2>
+        </div>
+
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <h3>Is this a physical product?</h3>
+                <p>
+                    No. Remembrance House sells digital editable
+                    templates. Nothing is posted to you.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do you personalise the template for me?</h3>
+                <p>
+                    The templates are designed for customers to edit
+                    themselves. You can replace the sample wording
+                    and images with your own content.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I change the photographs and wording?</h3>
+                <p>
+                    Yes. The purpose of the template is to allow you
+                    to personalise the details for your loved one.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I print my finished Order of Service?</h3>
+                <p>
+                    After editing, download the finished design and
+                    print it at home or use a professional printing service.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I use the template more than once?</h3>
+                <p>
+                    Your final licence terms should clearly explain
+                    permitted personal use, copying and resale.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What if I need help?</h3>
+                <p>
+                    If you have questions about accessing, editing or
+                    downloading your template, please get in touch.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <h2>About Remembrance House</h2>
+
+        <p>
+            Remembrance House offers thoughtfully designed digital
+            funeral stationery to help families create a beautiful
+            and personal tribute.
+        </p>
+
+        <p>
+            Our editable templates are made to be simple to use,
+            giving you the freedom to add your own photographs,
+            words and memories while keeping a polished,
+            elegant design.
+        </p>
+
+        <p>
+            We know these details are being created during an
+            important and emotional time. Our aim is to offer calm,
+            tasteful templates that make the process feel a little simpler.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>REMEMBRANCE HOUSE</h3>
+
+    <p>
+        Editable digital Order of Service templates
+        · Instant access · Personalise yourself · Download & print
+    </p>
+
+    <p>
+        Home · Shop · How It Works · FAQ · About · Contact
+    </p>
+
+    <p>
+        Contact: ellietait2004@gmail.com
+    </p>
+
+</footer>
+
+</body>
+</html>
